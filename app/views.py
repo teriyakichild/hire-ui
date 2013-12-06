@@ -9,7 +9,6 @@ def index():
     return render_template("index.html",
         title = 'Home',
         user = user)
-
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -19,3 +18,8 @@ def login():
     return render_template('login.html', 
         title = 'Sign In',
         form = form)
+@app.route('/panels', methods = ['GET', 'POST'])
+def panels():
+    return render_template('panels.html',
+        title = 'My Panels',
+        panels = [])
